@@ -79,6 +79,8 @@ lvim.builtin.which_key.mappings["u"] = {
     h = { "<cmd>:split<cr>", "Horizontal split" },
     v = { "<cmd>:vsplit<cr>", "Vertical split" },
   },
+  c = { "<cmd>set spell<cr>", "Check spell"},
+  n = { "<cmd>set nospell<cr>", "No spell"}
 }
 
 
@@ -214,7 +216,7 @@ lvim.plugins = {
 -- })
 
 vim.api.nvim_create_autocmd("InsertLeave", {
-  pattern = { "*.js" },
+  pattern = { "*.js", "*.ts" },
   -- command = ":FZF",
   callback = function()
     vim.lsp.buf.format();
